@@ -3,8 +3,54 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Babel demo</title>
+		<script src="src/underscore.js"></script>
 	</head>
 	<body>
-		
 	</body>
+	<script>
+	window.onload=function(){
+		var o={
+			a:2,
+			m:function(){
+				return this.a+1;
+			}
+		};
+		console.log(o.m());
+		var p=Object.create
+
+		var json = 	[
+					"interestRate_pricingMethodName",
+					"interestRate_pricingMode",
+					"interestRate_fixedAmount",
+					"interestRate_percentValue",
+					"interestRate_principalMode",
+					"expenseRate_pricingMethodName",
+					"expenseRate_pricingMode",
+					"expenseRate_fixedAmount",
+					"expenseRate_percentValue",
+					"expenseRate_principalMode",
+					"chargesRate_pricingMethodName",
+					"chargesRate_pricingMode",
+					"chargesRate_fixedAmount",
+					"chargesRate_percentValue",
+					"chargesRate_principalMode"
+				],
+				newArr = [],
+				oldarr=[],
+				n = 0;
+        for (var i = 0; i <json.length; i++) {
+					oldarr.push(json[i].split('_')[0]);
+        }
+
+		for(var j=0;j<oldarr.length;j++){
+			if (oldarr[j] != oldarr[j + 1]) {
+					newArr.push(json.slice(n, j + 1));
+					n = j + 1;
+			};
+		}
+
+		// console.log(oldarr);
+        // console.log(newArr);
+	}
+	</script>
 </html>

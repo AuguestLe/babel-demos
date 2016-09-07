@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Babel demo</title>
+		<script src="src/underscore.js"></script>
+	</head>
+	<body>
+	</body>
+	<script>
+	    window.onload=function(){
+            _.each([1,2,3,4],function(val,key){
+                // console.log(key+':'+val);
+                // console.log('..........');
+
+            });
+            _.each({one:1,two:2,three:3},function(val,key){
+                // console.log(key+':'+val);
+                // console.log('.............');
+            })
+            var newMap=_.map(['a','b','c'],function(val){
+                return val+'map';
+            });
+            //console.log(newMap);
+            //reduce  对集合进行缩减
+            var sum =_.reduce([1,2,3],function(meo,sum){
+                return meo+sum;
+            },0);
+            //console.log(sum);
+            //find
+            var even =_.find([1,2,3,4,5,6],function(num) {
+                return num%2===0;
+            })
+            //console.log(even);
+            var evens =_.filter([1,2,3,4,5,6],function(num) {
+                return num%2===0;
+            })
+            //console.log(evens);
+            var isSome=_.some([1,2,3,4,5,6],function(num) {
+                return num>5;
+            })
+
+            var isEveyr=_.every([1,2,3,4,5,6],function(num) {
+                return num>5;
+            })
+            //console.log(isSome,isEveyr);
+            var arr=[{name:'a',age:40},{name:'b',age:42},{name:'c',age:42}];
+            var names=_.pluck(arr,'name');
+            console.log(names);
+            var sorts=_.indexBy(arr,'age');
+            console.log(sorts);
+        }
+	</script>
+</html>
